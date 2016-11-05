@@ -1,0 +1,5 @@
+db.posts.createIndex({Tags:1,CreatedAtUtc:-1})
+db.posts.createIndex({Tags:1})
+
+db.posts.explain("executionStats").find({}).sort({"CreatedAtUtc":-1}).limit(10)
+db.posts.explain("executionStats").find({"Tags":"Van"}).sort({"CreatedAtUtc":-1}).limit(10)

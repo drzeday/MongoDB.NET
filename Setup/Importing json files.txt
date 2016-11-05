@@ -1,0 +1,7 @@
+mongoimport --db agg --collection zips --file zips.json
+
+mongoimport --drop -d blog -c posts posts.json
+
+mongoimport --drop -d test -c zips small_zips.json
+
+mongoimport --drop -d test -c grades grades.json

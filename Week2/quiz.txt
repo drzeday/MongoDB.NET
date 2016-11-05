@@ -1,0 +1,7 @@
+[optional QUIZ1]
+db.movieDetails.find({"awards.oscars.award" : "bestPicture"})
+
+[optional QUIZ2]
+db.movieDetails.find({"imdb.votes":{$lt:10000}, "year":{$gte:2010, $lte:2013}, $and:[{"tomato.consensus":{$exists:true}},{"tomato.consensus":null}]}).count()
+
+db.movieDetails.updateMany({"imdb.votes":{$lt:10000}, "year":{$gte:2010, $lte:2013}, $and:[{"tomato.consensus":{$exists:true}},{"tomato.consensus":null}]},{$unset: {"tomato.consensus":1}})

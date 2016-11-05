@@ -1,0 +1,2 @@
+add C:\Program Files\MongoDB\Server\3.2\bin
+to Path variable on Windows Advanced System Settings
